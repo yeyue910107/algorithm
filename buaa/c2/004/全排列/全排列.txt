@@ -1,0 +1,58 @@
+#include<stdio.h>
+enum {MAX = 100};
+char res[MAX];
+void arrange(int k, char array[]);
+void swap(char *a, char *b);
+void insertSort(char array[], int n);
+main()
+{
+	int i, n;
+	char c;
+	//scanf("%d%d", &n, &m);
+	//loop = factor(n - m);
+	i = 0;
+	while((c = getchar()) != EOF){
+		res[i] = c;
+		i++;
+	}
+	res[i] = '\0';
+	n = i;
+	insertSort(res, n);
+	arrange(n, res);
+}
+
+void arrange(int k, char array[]){
+	int i;
+	if(k == 1){
+		printf("%s", res);
+		printf("\n");
+		return;
+	}
+	for(i = 0;i < k;i++){
+		swap(&array[0], &array[i]);
+		//circleRight(array, 1, i);
+		arrange(k - 1, &array[1]);
+		//circleLeft(array, 1, i);
+		swap(&array[i], &array[0]);
+	}
+}
+
+void swap(char *a, char *b){
+	char temp;
+
+	temp = *a;
+	*a = *b;
+	*b = temp;
+}
+
+void insertSort(char array[], int n){
+	int i, j;
+	char temp;
+
+	for(i = 0;i < n - 1;i++){
+		temp = array[i + 1];
+		for(j = i + 1;j > 0 && temp < array[j - 1];j--)
+			array[j] = array[j - 1];
+		array[j] = temp;
+	}
+}

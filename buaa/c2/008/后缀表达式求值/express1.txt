@@ -1,0 +1,5 @@
+abda sin  bfd cos  *  cccc  /
+abda:90  bfd:60  cccc:1
+abda:30  bfd:60  cccc:1.5
+abda:180  bfd:0  cccc:-2.55
+abda:90  bfd:90  cccc:1
