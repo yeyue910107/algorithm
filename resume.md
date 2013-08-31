@@ -1,9 +1,12 @@
 ## 叶玥
+
 男，1991.1，安徽宣城
 
 电话: (+86)15810542702
 
 电子邮件: yeyue910107@gmail.com
+
+Github: https://github.com/yeyue910107
 
 <hr />
 
@@ -96,7 +99,3 @@
 * CET-6: 523
 
 * 雅思: 6.5
-
-### My Github
-
-* https://github.com/yeyue910107 简历中提及的大部分项目代码都托管在Github上
