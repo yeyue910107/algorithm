@@ -62,7 +62,7 @@ Github: https://github.com/yeyue910107
 
 ### 科研成果
 
-* MRPakcer: An SQL to MapReduce Optimizer （CIKM'2013录用，数据库和信息检索领域B类会议，SCI检索）
+* MRPacker: An SQL to MapReduce Optimizer （CIKM'2013录用，数据库和信息检索领域B类会议，SCI检索）
 
 ### 项目经验
 
