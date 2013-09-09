@@ -83,7 +83,6 @@ public class LRUCache<K extends Comparable, V> implements Cache<K, V> {
 	
 	@Override
 	public void put(K key, V value, long validTime) {
-		//cacheMap.put(key, new Item(key, value, e)
 		Item cur = cacheMap.get(key);
 		if (cur != null) {
 			cur.value = value;
