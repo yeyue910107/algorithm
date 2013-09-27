@@ -14,7 +14,7 @@ public:
         if (word.size() == 0)
             return true;
         int m = board.size(), n = board[0].size();
-		memset(visit, 0, sizeof(visit));
+	memset(visit, 0, sizeof(visit));
         bool flag = false;
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
@@ -31,16 +31,16 @@ private:
         if (i < 0 || i >= m || j < 0 || j >= n || visit[i][j])
             return false;
         if (board[i][j] == word[p]) {
-			if (p == word.size() - 1)
+	    if (p == word.size() - 1)
                 return true;
-			visit[i][j] = true;
+	    visit[i][j] = true;
             bool flag = false;
             for (int k = 0; k < 4; k++) {
                 flag |= _exist(board, word, i+X[k], j+Y[k], p+1, m, n);
                 if (flag) return true;
             }
         }
-		visit[i][j] = false;
+	visit[i][j] = false;
         return false;
     }
 };
@@ -50,7 +50,7 @@ int main() {
 	vector<char> row;
 	vector<vector<char>> board;
 	for (int i = 0; i < 4; i++)
-		row.push_back(s[i]);
+	    row.push_back(s[i]);
 	board.push_back(row);
 	board.push_back(row);
 	board.push_back(row);
