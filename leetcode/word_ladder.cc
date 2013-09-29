@@ -14,27 +14,27 @@ public:
     int ladderLength(string start, string end, set<string> &dict) {
         // Start typing your C/C++ solution below
         // DO NOT write int main() function
-		set<string>::iterator it;
-		vector<string> vdic;
-		int i;
-		vdic.push_back(start);
-		for (i = 1, it = dict.begin(); it != dict.end(); i++, it++) {
-			vdic.push_back(*it);
-		}
-		vdic.push_back(end);
-		int num = i + 1;
-		vector<int> v[MAX];
+	set<string>::iterator it;
+	vector<string> vdic;
+	int i;
+	vdic.push_back(start);
+	for (i = 1, it = dict.begin(); it != dict.end(); i++, it++) {
+		vdic.push_back(*it);
+	}
+	vdic.push_back(end);
+	int num = i + 1;
+	vector<int> v[MAX];
 
-		for (i = 0; i < num; i++) {
-			for (int j = i + 1; j < num; j++) {
-				if (onlyOneLetterDiff(vdic[i], vdic[j])) {
-					v[i].push_back(j);
-					v[j].push_back(i);
-				}
+	for (i = 0; i < num; i++) {
+		for (int j = i + 1; j < num; j++) {
+			if (onlyOneLetterDiff(vdic[i], vdic[j])) {
+				v[i].push_back(j);
+				v[j].push_back(i);
 			}
 		}
+	}
 
-		return bfs(v, num - 1);
+	return bfs(v, num - 1);
     }
 
 private:
