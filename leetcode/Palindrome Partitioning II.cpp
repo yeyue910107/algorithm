@@ -1,4 +1,4 @@
-class Solution {
+/*class Solution {
 public:
     int minCut(string s) {
         // Start typing your C/C++ solution below
@@ -13,7 +13,7 @@ public:
                 else if (j == 1)
                     flag[i][i+j] = (s[i] == s[i+j]);
                 else
-                    flag[i][i+j] = ((s[i] == s[i+j]) && flag[i+1][i+j-1])
+                    flag[i][i+j] = ((s[i] == s[i+j]) && flag[i+1][i+j-1]);
             }
         }
         
@@ -30,8 +30,8 @@ public:
         }
         return dp[0][len-1];
     }
-};
-/*
+};*/
+
 class Solution {
 public:
     int minCut(string s) {
@@ -66,4 +66,4 @@ public:
         }
         return dp[len-1];
     }
-};*/
+};
