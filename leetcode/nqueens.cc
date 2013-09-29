@@ -31,8 +31,8 @@ private:
     }
     bool judge(const int i, const int k, const int n) {
         for (int j = 0; j < i; j++) {
-			if (queen[j] == k || queen[j] - k == i - j || queen[j] - k == j - i)
-				return false;
+	    if (queen[j] == k || queen[j] - k == i - j || queen[j] - k == j - i)
+		return false;
         }
         return true;
     }
