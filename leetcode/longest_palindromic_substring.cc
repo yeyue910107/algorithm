@@ -22,7 +22,7 @@ public:
         		j--;
         	else {
         		i--;j--;
-			}
+		}
         }
         string output = tmp;
         return output;
