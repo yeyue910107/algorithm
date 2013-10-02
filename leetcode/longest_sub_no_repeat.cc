@@ -13,16 +13,16 @@ public:
             if (num[s[i]] >= 0) {
                 last = max(last, num[s[i]]);
             }
-			res = max(res, i - last);
-			num[s[i]] = i;
+	    res = max(res, i - last);
+	    num[s[i]] = i;
         }
         return max(res, i - last - 1);
     }
 };
 
 int main() {
-	string s = "wlrbbmqbhcdarzowkkyhiddqscdxrjmowfrxsjybldbefsarcbynecdyggxxpklorellnmpapqfwkhopkmco";
-	Solution so;
-	int res = so.lengthOfLongestSubstring(s);
-	return 0;
+    string s = "wlrbbmqbhcdarzowkkyhiddqscdxrjmowfrxsjybldbefsarcbynecdyggxxpklorellnmpapqfwkhopkmco";
+    Solution so;
+    int res = so.lengthOfLongestSubstring(s);
+    return 0;
 }
