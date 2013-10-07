@@ -18,21 +18,21 @@ private:
     TreeNode *build(vector<int> &in, vector<int> &post, const int i, const int j, int &k) {
         if (k < 0 || k >= post.size() || i > j)
             return NULL;
-		int index= _find(in, post[k]);
+        int index= _find(in, post[k]);
         if (index == -1)
             return NULL;
         TreeNode* node = new TreeNode(post[k]);
-		k--;
+        k--;
         node->right = build(in, post, index + 1, j, k);
         node->left = build(in, post, i, index - 1, k);
         return node;
     }
 
-	int _find(vector<int> v, const int num) {
-		int size = v.size();
-		for (int i = 0; i < size; i++)
-			if (v[i] == num)
-				return i;
-		return -1;
-	}
+    int _find(vector<int> v, const int num) {
+        int size = v.size();
+        for (int i = 0; i < size; i++)
+            if (v[i] == num)
+                return i;
+        return -1;
+    }
 };
