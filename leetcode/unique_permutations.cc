@@ -28,10 +28,10 @@ private:
         num[j] = tmp;
     }
 
-	bool isSwap(vector<int> &num, const int m, const int n) {
-		for (int i = m; i < n; i++)
-			if (num[i] == num[n])
-				return false;
-		return true;
-	}
+    bool isSwap(vector<int> &num, const int m, const int n) {
+        for (int i = m; i < n; i++)
+            if (num[i] == num[n])
+                return false;
+        return true;
+    }
 };
