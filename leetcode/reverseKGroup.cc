@@ -5,7 +5,7 @@ using namespace std;
 struct ListNode {
      int val;
      ListNode *next;
-	 ListNode(int x) : val(x), next(NULL) {}
+     ListNode(int x) : val(x), next(NULL) {}
 };
 
 class Solution {
@@ -21,14 +21,14 @@ public:
             len++;
         }
         p = head;
-		last = NULL;
-		int i = 0;
+        last = NULL;
+        int i = 0;
         while (len >= k) {
             reverseList(&p, k, &last, &tmp);
-			if (i == 0)
-				res = tmp;
+            if (i == 0)
+                res = tmp;
             len -= k;
-			i++;
+            i++;
         }
         return res;
     }
@@ -46,38 +46,38 @@ private:
             q->next = p;
             i++;
         }
-		*res = q;
-		if (*last != NULL)
-			(*last)->next = q;
-		*last = *head;
-		(*head)->next = r;
-		(*head) = r;
+        *res = q;
+        if (*last != NULL)
+            (*last)->next = q;
+        *last = *head;
+        (*head)->next = r;
+        (*head) = r;
     }
 };
 
 int main() {
-	int s[2] = {1, 2};
-	ListNode *head = NULL, *p = head;
-	for (int i = 0; i < 2; i++) {
-		ListNode *q = new ListNode(s[i]);
-		if (head == NULL) {
-			head = q;
-			p = head;
-		}
-		else {
-			p->next = q;
-			p = p->next;
-		}
-	}
-	Solution so;
-	ListNode *res = so.reverseKGroup(head, 3);
-	p = head;
-	while (head != NULL) {
-		cout << head->val << endl;
-		head = head->next;
-		delete(p);
-		p = head;
-	}
-	return 0;
+    int s[2] = {1, 2};
+    ListNode *head = NULL, *p = head;
+    for (int i = 0; i < 2; i++) {
+        ListNode *q = new ListNode(s[i]);
+        if (head == NULL) {
+            head = q;
+            p = head;
+        }
+        else {
+            p->next = q;
+            p = p->next;
+        }
+    }
+    Solution so;
+    ListNode *res = so.reverseKGroup(head, 3);
+    p = head;
+    while (head != NULL) {
+        cout << head->val << endl;
+        head = head->next;
+        delete(p);
+        p = head;
+    }
+    return 0;
 }
 
