@@ -16,6 +16,23 @@ public:
         }
         return -1;
     }
+    
+    int search2(int A[], int n, int target) {
+        int low = 0, high = n - 1, mid;
+        while (low < high) {
+            mid = low + (high - low) / 2;
+            if (A[mid] >= A[low]) {
+                if (A[low] <= target && target <= A[mid]) high = mid;
+                else low = mid + 1;
+            }
+            else {
+                if (A[mid] <= target && target <= A[high]) low = mid;
+                else high = mid - 1;
+            }
+        }
+        if (high >= 0 && high < n && A[high] == target) return high;
+        else return -1;
+    }
 
 private:
     int get_pivot(int A[], const int n) {
