@@ -5,7 +5,7 @@ using namespace std;
 
 class Solution {
 public:
-    int search(int A[], int n, int target) {
+    int _search(int A[], int n, int target) {
         int pivot = get_pivot(A, n), offset = n - pivot;
         int low = 0, high = n - 1, mid;
         while (low <= high) {
@@ -17,7 +17,7 @@ public:
         return -1;
     }
     
-    int search2(int A[], int n, int target) {
+    int search(int A[], int n, int target) {
         int low = 0, high = n - 1, mid;
         while (low < high) {
             mid = low + (high - low) / 2;
@@ -32,6 +32,22 @@ public:
         }
         if (high >= 0 && high < n && A[high] == target) return high;
         else return -1;
+    }
+    
+    bool search2(int A[], int n, int target) {
+        int low = 0, high = n - 1, mid;
+        while (low <= high) {
+            mid = low + (high - low) / 2;
+            if (A[low] < target && target < A[mid]) high = mid - 1;
+            else if (A[mid] < target && target < A[high]) low = mid + 1;
+            else {
+                if (A[low] != target) low++;
+                else return true;
+                if (A[high] != target) high--;
+                else return true;
+            }
+        }
+        return false;
     }
 
 private:
